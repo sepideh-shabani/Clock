@@ -1,0 +1,99 @@
+html {
+  height: 100%;
+  background: #2b2b2b;
+  font-family: sans-serif;
+  color: #fff;
+}
+.clock {
+  border-radius: 50%;
+  background: #fff url(images/clock.jpg) no-repeat center;
+  background-size: 88%;
+  height: 20em;
+  position: relative;
+  max-width: 20em;
+  margin: 20px auto;
+  box-shadow: 0px 0px 50px #363636 inset;
+}
+.clock:after {
+  background: #3a3a3a;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  z-index: 10;
+}
+
+.minutes-container,
+.hours-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hours {
+  background: #4f4f4f;
+  height: 26%;
+  left: 49.75%;
+  position: absolute;
+  top: 24%;
+  transform-origin: 50% 100%;
+  width: 0.75%;
+  border-radius: 8px;
+}
+.minutes {
+  background: #4f4f4f;
+  height: 33%;
+  left: 49.6%;
+  position: absolute;
+  top: 17%;
+  transform-origin: 50% 100%;
+  width: 0.75%;
+  border-radius: 8px;
+}
+
+.seconds {
+  height: 33%;
+  left: 49.6%;
+  position: absolute;
+  top: 17%;
+  transform-origin: 50% 100%;
+  width: 0.75px;
+  border-radius: 8px;
+  background: red;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.hours-container {
+  animation: rotate 43200s infinite linear;
+}
+.minutes-container {
+  animation: rotate 3600s infinite linear;
+  /* animation: rotate 3600s infinite steps(60); */
+}
+.seconds-container {
+  animation: rotate 60s infinite linear;
+  /* animation: rotate 60s infinite steps(60); */
+}
+#timeZone {
+  display: flex;
+  font-size: 2em;
+  justify-content: center;
+  padding: 16px 0;
+}
+#digital-clock {
+  display: flex;
+  font-size: 3.5em;
+  justify-content: center;
+}
